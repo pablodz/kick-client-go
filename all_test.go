@@ -16,5 +16,12 @@ func TestTest2(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	t.Fail()
+}
+
+func TestTest3(t *testing.T) {
+	data := `"{\"id\":\"a109538a-50e2-4edc-b74a-1c716aed3a3e\",\"chatroom_id\":75062,\"content\":\"Do CREATOR ROUND PLAYLIST 4 it\\u2019s fireeeee\",\"type\":\"message\",\"created_at\":\"2023-06-22T07:38:47+00:00\",\"sender\":{\"id\":549307,\"username\":\"Vap3rz\",\"slug\":\"vap3rz\",\"identity\":{\"color\":\"#B9D6F6\",\"badges\":[]}}}"`
+	_, err := handleChatMessageEvent(data)
+	if err != nil {
+		t.Error(err)
+	}
 }
